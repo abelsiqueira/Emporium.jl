@@ -1,5 +1,5 @@
 module Emporium
 
-# Write your package code here.
+include("create-test-project-from-main-project.jl")
 
 end

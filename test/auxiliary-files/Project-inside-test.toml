@@ -1,0 +1,8 @@
+[deps]
+BakedPotato = "76543210-e22c-5e08-85e1-65c5234f0b40"
+FriedPotato = "01234567-e22c-5e08-85e1-65c5234f0b40"
+PotatoChips = "01234567-6666-6666-85e1-65c5234f0b40"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+BakedPotato = "1.0"

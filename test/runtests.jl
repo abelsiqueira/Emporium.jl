@@ -1,6 +1,4 @@
 using Emporium
 using Test
 
-@testset "Emporium.jl" begin
-    # Write your tests here.
-end
+include("create-test-project-from-main-project.jl")
