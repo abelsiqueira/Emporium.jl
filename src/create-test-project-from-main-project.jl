@@ -51,7 +51,15 @@ function create_test_project_from_main_project()
     end
   end
   delete!(targets, "test")
-  test_project = Dict("deps" => test_deps, "compat" => test_compat)
+  for k in ["compat", "deps", "extras", "targets"]
+    if length(project[k]) == 0
+      delete!(project, k)
+    end
+  end
+  test_project = Dict("deps" => test_deps)
+  if length(test_compat) > 0
+    test_project["compat"] = test_compat
+  end
 
   # Copied from Pkg.jl
   _project_key_order = ["name", "uuid", "keywords", "license", "desc", "deps", "compat"]
