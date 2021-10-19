@@ -1,0 +1,17 @@
+authors:
+  - affiliation: Netherlands eScience Center
+    email: abel.s.siqueira@gmail.com
+    family-names: Soares Siqueira
+    given-names: Abel
+    orcid: 'https://orcid.org/0000-0003-4451-281X'
+cff-version: 1.2.0
+keywords:
+  - Package Management
+  - File Formatter
+  - Scripts
+  - Julia
+license: MPL-2.0
+message: Use the following metadata to cite our fine selection of goods
+repository-code: 'https://github.com/abelsiqueira/Emporium.jl'
+title: Emporium.jl
+type: software
