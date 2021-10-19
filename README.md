@@ -4,6 +4,7 @@
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://abelsiqueira.github.io/Emporium.jl/dev)
 [![Build Status](https://github.com/abelsiqueira/Emporium.jl/workflows/CI/badge.svg)](https://github.com/abelsiqueira/Emporium.jl/actions)
 [![Coverage](https://codecov.io/gh/abelsiqueira/Emporium.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/abelsiqueira/Emporium.jl)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5579544.svg)](https://doi.org/10.5281/zenodo.5579544)
 
 Welcome to the Julia _scripts_ Emporium.
 You will find here an assorted selection of short snippets in the form of functions for specific tasks.
