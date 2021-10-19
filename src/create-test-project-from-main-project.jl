@@ -19,8 +19,6 @@ function create_test_project_from_main_project()
   # Early return if there's nothing we can do. No error!
   project = TOML.parsefile("Project.toml")
   if ["targets", "extras"] ∩ keys(project) == [] || !("test" in keys(project["targets"]))
-    @info ["targets", "extras"] ∩ keys(project)
-    @info "test" in keys(project["targets"])
     @info(
       "Nothing to do, create test/Project.toml manually: just `pkg> activate test` and `add` things."
     )
