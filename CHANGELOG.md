@@ -8,8 +8,11 @@ and this project adheres to [Semantic Versioning].
 ## [Unreleased]
 
 ### Added
-- Create git auxiliary function
+
+- Git auxiliary function
 - This CHANGELOG.md file
+- Organization related functions
+- Function to run on folders
 
 ### Changed
 
@@ -22,13 +25,14 @@ and this project adheres to [Semantic Versioning].
 ### Security
 
 ## [0.1.0] - 2021-10-22
+
 - initial release
 
 ### Added
+
 - Package created using PkgTemplates.jl
 - Function to create test/Project.toml from Project.toml
 - Citation and Zenodo
-
 
 <!-- Links -->
 [keep a changelog]: https://keepachangelog.com/en/1.0.0/
