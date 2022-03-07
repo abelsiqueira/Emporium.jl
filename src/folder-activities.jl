@@ -25,7 +25,7 @@ You want to have the same configuration in all your repos, that are cloned into 
 ```julia-repl
 julia> myfile = joinpath(pwd(), ".editorconfig")
 julia> folders = readdir("cloned-repos", join=true)
-julia> run_on_folders(`cp $myfile .`, folders)
+julia> run_on_folders(`cp \$myfile .`, folders)
 julia> run_on_folders((;kws...) ->
        if git_has_to_commit() && run(`git commit -am "Add or update"`), folders)
 julia> run_on_folders(`git push`, folders)
