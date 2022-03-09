@@ -11,7 +11,8 @@ Run `action` into each folder in `folders`.
 
 The following keyword arguments will be passed to `action`:
 
-- `folder`: Current folder
+- `basename`: Folder name stripped of dirs before it.
+- `dirname`: Complement of `basename`.
 - `index`: Index of traversal in `folders`, obtained from `enumerate(folder_list)`.
 
 If you think of something useful to add to this list, let me know.
@@ -42,7 +43,11 @@ function run_on_folders(
       if dry_run
         println("Would run action inside $folder")
       else
-        action(folder=folder, index=index)
+        action(
+          basename = basename(folder),
+          dirname = dirname(folder),
+          index=index,
+        )
       end
     end
   end
