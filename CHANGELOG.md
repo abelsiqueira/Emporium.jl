@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning].
 
 ### Added
 
+- `check_and_fix_compliance` to compare a list of files in a folder of packages against a template package.
+
 ### Changed
 
 - `create_pull_request` now returns a `PullRequest` object. If `dry-run = true`, it returns an empty one, otherwise the created PR.
