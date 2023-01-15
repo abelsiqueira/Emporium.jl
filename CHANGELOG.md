@@ -5,14 +5,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
-## [Unreleased]
+## [unreleased]
 
 ### Added
-
-- Git auxiliary function
-- This CHANGELOG.md file
-- Organization related functions
-- Function to run on folders
 
 ### Changed
 
@@ -23,6 +18,15 @@ and this project adheres to [Semantic Versioning].
 ### Fixed
 
 ### Security
+
+## [0.2.0] - 2022-03-07
+
+### Added
+
+- Git auxiliary function
+- This CHANGELOG.md file
+- Organization related functions
+- Function to run on folders
 
 ## [0.1.0] - 2021-10-22
 
@@ -39,5 +43,6 @@ and this project adheres to [Semantic Versioning].
 [semantic versioning]: https://semver.org/spec/v2.0.0.html
 
 <!-- Versions -->
-[unreleased]: https://github.com/Author/Repository/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/Author/Repository/releases/tag/v0.1.0
+[unreleased]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.1.0..v0.2.0
+[0.1.0]: https://github.com/abelsiqueira/Emporium.jl/releases/tag/v0.1.0
