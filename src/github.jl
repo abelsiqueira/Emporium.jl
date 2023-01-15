@@ -1,4 +1,4 @@
-export clone_organization_repos
+export clone_organization_repos, create_pull_request
 
 """
     clone_organization_repos(org; options...)
@@ -39,7 +39,7 @@ function clone_organization_repos(
 end
 
 """
-    create_pull_request(repo, title, body, head; options...)
+    pr = create_pull_request(repo, title, body, head; options...)
 
 Very thin layer over GitHub.create_pull_request.
 Creates a pull request to `repo` from branch `head` to base `base` (defaults to `main`).
@@ -68,10 +68,14 @@ function create_pull_request(
     :maintainer_can_modify => true,
     :draft => false,
   )
-  if dry_run
+  pr = if dry_run
     @info "Would create a pull request with params = $params"
+    GitHub.PullRequest()
   else
     pr = GitHub.create_pull_request(GitHub.repo(repo), auth = auth, params = params)
     @info "Pull request created at $(pr.url)"
+    pr
   end
+
+  return pr
 end
