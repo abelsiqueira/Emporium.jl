@@ -26,6 +26,23 @@ and this project adheres to [Semantic Versioning].
 
 ### Security
 
+## [0.2.1] - 2023-01-15
+
+### Added
+
+- `check_and_fix_compliance` to compare a list of files in a folder of packages against a template package.
+
+### Changed
+
+- `create_pull_request` now returns a `PullRequest` object. If `dry-run = true`, it returns an empty one, otherwise the created PR.
+- Add option `rethrow_exception` to `run_on_folder` to allow propagating the exception.
+
+### Fixed
+
+- Added compat bounds
+
+### Security
+
 ## [0.2.0] - 2022-03-07
 
 ### Added
@@ -50,6 +67,7 @@ and this project adheres to [Semantic Versioning].
 [semantic versioning]: https://semver.org/spec/v2.0.0.html
 
 <!-- Versions -->
-[unreleased]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.2.0...HEAD
+[unreleased]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.2.0..v0.2.1
 [0.2.0]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.1.0..v0.2.0
 [0.1.0]: https://github.com/abelsiqueira/Emporium.jl/releases/tag/v0.1.0

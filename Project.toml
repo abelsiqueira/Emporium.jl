@@ -1,7 +1,7 @@
 name = "Emporium"
 uuid = "4f286ecd-06d3-4492-bdef-0ca090b7d070"
 authors = ["Abel Soares Siqueira <abel.s.siqueira@gmail.com> and contributors"]
-version = "0.2.0"
+version = "0.2.1"
 
 [deps]
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
