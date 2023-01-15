@@ -17,6 +17,11 @@ The following keyword arguments will be passed to `action`:
 
 If you think of something useful to add to this list, let me know.
 
+## Options
+
+- `dry_run = false`: Don't run the action, just print.
+- `rethrow_exception = false`: If an exception is thrown by the action, rethrow it.
+
 ## Examples
 
 ### Updating a file throught your cloned repos
@@ -33,21 +38,20 @@ julia> run_on_folders(`git push`, folders)
 ```
 
 """
-function run_on_folders(
-  action,
-  folders;
-  dry_run = false
-)
+function run_on_folders(action, folders; dry_run = false, rethrow_exception = false)
   for (index, folder) in enumerate(folders)
     cd(folder) do
       if dry_run
         println("Would run action inside $folder")
       else
-        action(
-          basename = basename(folder),
-          dirname = dirname(folder),
-          index=index,
-        )
+        try
+          action(basename = basename(folder), dirname = dirname(folder), index = index)
+        catch ex
+          println("Running action on $folder threw $ex")
+          if rethrow_exception
+            rethrow(ex)
+          end
+        end
       end
     end
   end
@@ -57,7 +61,7 @@ function run_on_folders(action, folder::String, args...; kwargs...)
   if !isdir(folder)
     error("$folder is not a folder nor a list of folders")
   end
-  run_on_folders(action, readdir(folder, join=true))
+  run_on_folders(action, readdir(folder, join = true))
 end
 
 function run_on_folders(action::Cmd, args...; kwargs...)

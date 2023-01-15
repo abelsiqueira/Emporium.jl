@@ -11,11 +11,16 @@ and this project adheres to [Semantic Versioning].
 
 ### Changed
 
+- `create_pull_request` now returns a `PullRequest` object. If `dry-run = true`, it returns an empty one, otherwise the created PR.
+- Add option `rethrow_exception` to `run_on_folder` to allow propagating the exception.
+
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
+- Added compat bounds
 
 ### Security
 
