@@ -19,6 +19,9 @@
       @test_throws ErrorException create_test_project_from_main_project()
     end
     rm("test/Project.toml")
-    @test_logs (:info, "Nothing to do, create test/Project.toml manually: just `pkg> activate test` and `add` things.") create_test_project_from_main_project()
+    @test_logs (
+      :info,
+      "Nothing to do, create test/Project.toml manually: just `pkg> activate test` and `add` things.",
+    ) create_test_project_from_main_project()
   end
 end
