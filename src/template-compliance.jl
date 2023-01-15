@@ -119,6 +119,7 @@ function check_and_fix_compliance(
         if create_pr
           repo = "$owner/$basename"
           @info "Creating pull request to $repo"
+          run(`git remote set-url origin https://$(auth.token)@github.com/$repo`)
           run(`git push -u origin $branch_name`)
           new_pr = create_pull_request(
             repo,
