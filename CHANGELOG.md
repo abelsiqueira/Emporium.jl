@@ -17,9 +17,13 @@ and this project adheres to [Semantic Versioning].
 
 ### Fixed
 
-- Fix authentication on `check_and_fix_compliance` push.
-
 ### Security
+
+## [0.2.2] - 2023-01-15
+
+### Fixed
+
+- Fix authentication on `check_and_fix_compliance` push.
 
 ## [0.2.1] - 2023-01-15
 
@@ -62,7 +66,8 @@ and this project adheres to [Semantic Versioning].
 [semantic versioning]: https://semver.org/spec/v2.0.0.html
 
 <!-- Versions -->
-[unreleased]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.2.1...HEAD
+[unreleased]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.2.2...HEAD
+[0.2.2]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.2.1..v0.2.2
 [0.2.1]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.2.0..v0.2.1
 [0.2.0]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.1.0..v0.2.0
 [0.1.0]: https://github.com/abelsiqueira/Emporium.jl/releases/tag/v0.1.0
