@@ -73,7 +73,7 @@ function create_pull_request(
     GitHub.PullRequest()
   else
     pr = GitHub.create_pull_request(GitHub.repo(repo), auth = auth, params = params)
-    @info "Pull request created at $(pr.url)"
+    @info "Pull request created at $(pr.html_url)"
     pr
   end
 
