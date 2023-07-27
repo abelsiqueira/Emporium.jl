@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning].
 
 ### Changed
 
+- Allow customized commit message, PR title, and PR body for compliance update.
+- If an existing compliance update with the same content exists, don't create a new one.
+
 ### Deprecated
 
 ### Removed
