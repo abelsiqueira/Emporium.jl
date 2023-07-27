@@ -7,20 +7,14 @@ and this project adheres to [Semantic Versioning].
 
 ## [unreleased]
 
-### Added
+...
+
+## [0.2.4] - 2023-07-23
 
 ### Changed
 
 - Allow customized commit message, PR title, and PR body for compliance update.
 - If an existing compliance update with the same content exists, don't create a new one.
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
 
 ## [0.2.3] - 2023-07-18
 
@@ -75,7 +69,8 @@ and this project adheres to [Semantic Versioning].
 [semantic versioning]: https://semver.org/spec/v2.0.0.html
 
 <!-- Versions -->
-[unreleased]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.2.3...HEAD
+[unreleased]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.2.4...HEAD
+[0.2.4]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.2.3..v0.2.4
 [0.2.3]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.2.2..v0.2.3
 [0.2.2]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.2.1..v0.2.2
 [0.2.1]: https://github.com/abelsiqueira/Emporium.jl/compare/v0.2.0..v0.2.1
