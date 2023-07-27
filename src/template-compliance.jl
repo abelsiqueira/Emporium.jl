@@ -123,27 +123,50 @@ function check_and_fix_compliance(
           repo = "$owner/$basename"
           @info "Creating pull request to $repo"
           run(`git remote set-url origin https://$(auth.token)@github.com/$repo`)
-          run(`git push -u origin $branch_name`)
-          new_pr = create_pull_request(
-            repo,
-            pr_title,
-            pr_body,
-            branch_name,
-            auth = auth,
-          )
-          if close_older_compliance_prs
-            @info "Checking for older compliance PRs to close"
-            prs, _ = GitHub.pull_requests(repo, auth = auth)
-            for pr in prs
-              if startswith(pr.head.ref, "emporium/compliance-") && pr.head.ref != branch_name
-                @info "Closing PR $(pr.number)"
-                GitHub.create_comment(
-                  repo,
-                  pr,
-                  "Closing in favor of #$(new_pr.number)",
-                  auth = auth,
-                )
-                GitHub.close_pull_request(repo, pr, auth = auth)
+
+          @info "Checking for older compliance PRs"
+          prs, _ = GitHub.pull_requests(repo, auth = auth)
+          abort_pr = false
+          for pr in prs
+            if startswith(pr.head.ref, "emporium/compliance-") && pr.head.ref != branch_name
+              remote = if pr.head.user.login != owner
+                remote = pr.head.user.login
+                run(`git remote set-url $remote https://github.com/$remote/$basename`)
+                remore
+              else
+                "origin"
+              end
+              if length(read(`git diff $remote/$(pr.head.ref)`)) == 0
+                # No difference to existing PR
+                @info "PR#$(pr.number) already implements the proposed PR"
+                abort_pr = true
+                break
+              end
+            end
+          end
+
+          if !abort_pr
+            run(`git push -u origin $branch_name`)
+            new_pr = create_pull_request(
+              repo,
+              pr_title,
+              pr_body,
+              branch_name,
+              auth = auth,
+            )
+            if close_older_compliance_prs
+              for pr in prs
+                if startswith(pr.head.ref, "emporium/compliance-") && pr.head.ref != branch_name
+
+                  @info "Closing PR $(pr.number)"
+                  GitHub.create_comment(
+                    repo,
+                    pr,
+                    "Closing in favor of #$(new_pr.number)",
+                    auth = auth,
+                  )
+                  GitHub.close_pull_request(repo, pr, auth = auth)
+                end
               end
             end
           end
