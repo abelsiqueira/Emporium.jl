@@ -47,10 +47,13 @@ function check_and_fix_compliance(
   auth = GitHub.AnonymousAuth(),
   check_only = false,
   close_older_compliance_prs = true,
+  commit_message = ":bot: Template compliance update",
   create_pr = false,
   filter_jl_ending = true,
   info_header_frequency::Int = 5,
   owner = "",
+  pr_title = "[Emporium.jl] Template compliance update",
+  pr_body = "Created with Emporium.jl function `check_and_fix_compliance`",
   rename_these_files = [],
   template_pkg_name = "",
 )
@@ -115,7 +118,7 @@ function check_and_fix_compliance(
       if git_has_to_commit()
         @info "Creating commit in $basename"
         run(`git checkout -b $branch_name`)
-        run(`git commit -m ":bot: Template compliance update"`)
+        run(`git commit -m "$commit_message"`)
         if create_pr
           repo = "$owner/$basename"
           @info "Creating pull request to $repo"
@@ -123,8 +126,8 @@ function check_and_fix_compliance(
           run(`git push -u origin $branch_name`)
           new_pr = create_pull_request(
             repo,
-            "[Emporium.jl] Template compliance update",
-            "Created with Emporium.jl function `check_and_fix_compliance`",
+            pr_title,
+            pr_body,
             branch_name,
             auth = auth,
           )
